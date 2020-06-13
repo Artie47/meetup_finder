@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="вход.css">	
+<link rel="shortcut icon" type="image/x-icon" href="i/Безmый (1).ico">
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+<title>
+	Meetup_Finder
+</title>
+</head>
+<body>
+<header>
+	<figure> <img src="i/MeFi2 .png"> </figure> 
+	<p class="m"> Meetup_Finder </p>
+	<div class="t">
+      <a href="index.html#rr" class="g"> Регистрация </a>
+      
+</div>
+</header>
+<section>
+  <div style="display: inline-flex;width: 100%;justify-content: space-between;box-sizing: border-box;" class="concrete">
+  
+    <div class="in grad ">
+      <div class="fon">
+        <div class="top"></div>
+        <div class="left"></div>
+        <div class="rigth"></div>
+        <p class="font v">Вход</p>
+        
+        <form>
+         
+          <input class="font" required="" placeholder="логин" type="text">
+          <input class="font" required="" placeholder="пароль" type="password">
+      
+        </form>
+        <button class="font" style="margin-top: 50px;
+      width: 190px;
+      height: 50px;"><a href="личкаб.html">Войти</a></button>
+
+        <div class="bottom"></div>
+      </div>
+    </div>
+  
+
+</section>
+
+	<div id="progressbar"></div>
+	<div id="scrollPath"></div>
+
+
+<script type="text/javascript">
+	let progress = document.getElementById('progressbar');
+	let totalHeight = document.body.scrollHeight - window.innerHeight;
+	window.onscroll = function(){
+		let progressHeight = (window.pageYOffset / totalHeight) * 100;
+		progress.style.height = progressHeight + "%";
+	}
+    </script>
+    <script src="cal.js"></script>
+    <footer>
+      <p class="x"> Контакты: 8-908-512-89-00 </p>
+    </footer>
+</body>
+</html>

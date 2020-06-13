@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="личкаб.css">	
+<link rel="shortcut icon" type="image/x-icon" href="i/Безmый (1).ico">
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+<title>
+	Meetup_Finder
+</title>
+</head>
+<body>
+<header>
+	<figure> <img src="i/MeFi2 .png"> </figure> 
+	<p class="m"> Meetup_Finder </p>
+	<div class="t">
+      <a href="вход.html#vh" class="r"> Выйти </a>
+     
+      
+</div>
+</header>
+
+
+<!--женя (начало) -->
+  <!--теги-->
+  <div style="display: inline-flex;width: 100%;justify-content: space-between;box-sizing: border-box;" class="wood">
+    <div class="grad teg">
+      <div class="top"></div>
+      <div class="left"></div>
+      <div class="rigth"></div>
+      <p class="tegi">Теги</p>
+      <div class="layer">
+        <ul id="tags" style="padding: 0;">
+        </ul>
+      </div>
+      <div style="text-align: center;">
+        <button id="buttonsave" onclick="save()">
+          сохранить
+        </button>
+        <button id="buttonedit" onclick="edit()" hidden>
+          изменить
+        </button>
+      </div>
+      <div class="bottom"></div>
+    </div>
+
+
+    <!--календарь-->
+    <div class="cal grad">
+      <div class="top"></div>
+      <div class="left"></div>
+      <div class="rigth"></div>
+      <!--верхняя панель календаря-->
+      <div class="month">
+        <button id="buttonprev" onclick="prevmonth()"><img src="i/2.png" alt="&loarr;"></button>
+
+        <span style="flex-grow: 1;"><span id="month"></span> <span id="year">2020</span></span>
+
+        <button id="buttonnext" onclick="nextmonth()"><img src="i/1.png" alt="&roarr;"></button>
+      </div>
+      <!--день недели-->
+      <table class="table" id="cal">
+        <tr style="width: 710px; height: 46px;">
+          <th class="day-name" style="border-radius: 16px 0 0 16px;">Понедельник</th>
+          <th class="day-name">Вторник</th>
+          <th class="day-name">Среда</th>
+          <th class="day-name">Четверг</th>
+          <th class="day-name">Пятница</th>
+          <th class="day-name">Суббота</th>
+          <th class="day-name" style="border-radius: 0 16px 16px 0;">Воскресение</th>
+        </tr>
+        <!--дни-->
+        <tr>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+        </tr>
+        <tr>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+        </tr>
+        <tr>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+        </tr>
+        <tr>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+        </tr>
+        <tr>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+        </tr>
+        <tr>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+        </tr>
+      </table>
+      <div class="bottom"></div>
+    </div>
+  </div>
+  <!--женя конец-->
+  <div class="ras">
+      <div class="mailing grad" id="mailing">
+        <div class="fon">
+          <div class="top"></div>
+          <div class="left"></div>
+          <div class="rigth"></div>
+          <img class="ppol" src="i/iii.png">
+          <img class="pppol" src="i/Снlkjhимок.png">
+          <img class="ppppol" src="i/Сниkjhgмок.png">
+          <img class="pppool" src="i/Сниkjhgkjbvмок.png">
+          <img class="pppoool" src="i/Безымянный.png">
+        
+          <table cellpadding="0" cellspacing="0" class="pool">
+            <form id="spam" onsubmit="event.preventDefault();spam();return false"></form>
+          <tr>
+            <td class="pyl"></td>
+            <td class="pyl"></td>
+            <td colspan="7" class="pol">Пожалуйста, выберете удобный для вас день получения рассылки</td>
+            
+          </tr>
+          <tr>
+            <td class="pyyl"></td>
+            <td class="pyyl"></td>
+            <td class="pyyl">пн</td>
+            <td class="pyyl">вт</td>
+            <td class="pyyl">ср</td>
+            <td class="pyyl">чт</td>
+            <td class="pyyl">пт</td>
+            <td class="pyyl">сб</td>
+            <td class="pyyl">вс</td>
+          </tr>
+          <tr>
+            <td class="pooool">ВК рассылка 
+            </td>
+            <td class="poool" width="10"><button class="knopkaa" onclick="sav()">
+          Включить рассылку
+        </button></td>
+            <td class="poool"><input type="checkbox" name="vk" value="1" class="label" style="transform:scale(2.0);"></td>
+            <td class="poool"><input type="checkbox" name="vk" value="2" class="label" style="transform:scale(2.0);"></td>
+            <td class="poool"><input type="checkbox" name="vk" value="3" class="label" style="transform:scale(2.0);"></td>
+            <td class="poool"><input type="checkbox" name="vk" value="4" class="label" style="transform:scale(2.0);"></td>
+            <td class="poool"><input type="checkbox" name="vk" value="5" class="label" style="transform:scale(2.0);"></td>
+            <td class="poool"><input type="checkbox" name="vk" value="6" class="label" style="transform:scale(2.0);"></td>
+            <td class="poool"><input type="checkbox" name="vk" value="7" class="label" style="transform:scale(2.0);"></td>
+            <td class="poool vrem"><input class="vremn" type="time" name="cron" value="00:00" min="00:01" max="06:00"></td>
+          </tr>
+          <tr>
+            <td class="pooool">Телеграм рассылка</td>
+            <td class="poool"><button class="knopkaa" onclick="sav()">
+          Включить рассылку
+        </button></td>
+            <td class="poool"><input type="checkbox" name="tl" value="1" style="transform:scale(2.0);"></td>
+            <td class="poool"><input type="checkbox" name="tl" value="2" style="transform:scale(2.0);"></td>
+            <td class="poool"><input type="checkbox" name="tl" value="3" style="transform:scale(2.0);"></td>
+            <td class="poool"><input type="checkbox" name="tl" value="4" style="transform:scale(2.0);"></td>
+            <td class="poool"><input type="checkbox" name="tl" value="5" style="transform:scale(2.0);"></td>
+            <td class="poool"><input type="checkbox" name="tl" value="6" style="transform:scale(2.0);"></td>
+            <td class="poool"><input type="checkbox" name="tl" value="7" style="transform:scale(2.0);"></td>
+            <td class="poool vrem"><input class="vremn" type="time" name="cron" value="00:00" min="00:01" max="06:00"></td>
+          </tr>
+          <tr>
+            <td class="poooll"colspan="9"><button class="knopka" onclick="sav()">
+          сохранить
+        </button></td>
+             </tr>
+            </form>
+          </table>
+       
+          <div class="bottom"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="progressbar"></div>
+  <div id="scrollPath"></div>
+
+<footer>
+  <p class="x"> Контакты: 8-908-512-89-00 </p>
+</footer>
+<script type="text/javascript">
+  let progress = document.getElementById('progressbar');
+  let totalHeight = document.body.scrollHeight - window.innerHeight;
+  window.onscroll = function(){
+    let progressHeight = (window.pageYOffset / totalHeight) * 100;
+    progress.style.height = progressHeight + "%";
+  }
+    </script>
+    <script src="cal.js"></script>
+</body>
+</html>

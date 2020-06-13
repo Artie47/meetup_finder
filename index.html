@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">	
+<link rel="shortcut icon" type="image/x-icon" href="i/Безmый (1).ico">
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+<title>
+	Meetup_Finder
+</title>
+</head>
+<body>
+<header>
+	<figure> <img src="i/MeFi2 .png"> </figure> 
+	<p class="m"> Meetup_Finder </p>
+	<div class="t">
+      <a href="вход.html" class="r"> Вход </a>
+      <a href="index.html#rr" class="g"> Регистрация </a>
+      
+      
+</div>
+</header>
+<section>
+	
+	<img src="i/описание.png">
+</section>
+
+<!--женя (начало) -->
+ <div style="display: inline-flex;width: 100%;justify-content: space-between;box-sizing: border-box;" class="wood">
+    <div class="grad teg">
+      <div class="top"></div>
+      <div class="left"></div>
+      <div class="rigth"></div>
+      <p class="tegi">Теги</p>
+      <div class="layer">
+        <ul id="tags" style="padding: 0;">
+        </ul>
+      </div>
+      <div style="text-align: center;">
+        <button id="buttonsave" onclick="save()">
+          сохранить
+        </button>
+        <button id="buttonedit" onclick="edit()" hidden>
+          изменить
+        </button>
+      </div>
+      <div class="bottom"></div>
+    </div>
+    <div class="cal grad">
+      <div class="top"></div>
+      <div class="left"></div>
+      <div class="rigth"></div>
+      <div class="month">
+        <button id="buttonprev" onclick="prevmonth()"><img src="i/2.png" alt="&loarr;"></button>
+
+        <span style="flex-grow: 1;"><span id="month"></span> <span id="year">2020</span></span>
+
+        <button id="buttonnext" onclick="nextmonth()"><img src="i/1.png" alt="&roarr;"></button>
+      </div>
+      <table id="cal">
+        <tr style="width: 710px; height: 46px;">
+          <th class="day-name" style="border-radius: 16px 0 0 16px;">Понедельник</th>
+          <th class="day-name">Вторник</th>
+          <th class="day-name">Среда</th>
+          <th class="day-name">Четверг</th>
+          <th class="day-name">Пятница</th>
+          <th class="day-name">Суббота</th>
+          <th class="day-name" style="border-radius: 0 16px 16px 0;">Воскресение</th>
+        </tr>
+        <tr>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+        </tr>
+        <tr>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+        </tr>
+        <tr>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+        </tr>
+        <tr>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+        </tr>
+        <tr>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+        </tr>
+        <tr>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+          <td class="day"><span class="number"></span></td>
+        </tr>
+      </table>
+      <div class="bottom"></div>
+    </div>
+  </div>
+  <a name="rr">
+  <table class="razmet">
+    <tr>
+      <td class="tablras">
+  <div style="display: inline-flex;width: 100%;justify-content: space-between;box-sizing: border-box;" class="concrete">
+    <div class="in grad ff">
+      <div class="fon">
+        <div class="top"></div>
+        <div class="left"></div>
+        <div class="rigth"></div>
+        <p class="font v">Регистрация</p>
+        
+        <form>
+          <input class="font" required="" placeholder="логин" type="text">
+          <input class="font" required="" placeholder="пароль" type="password">
+          <input class="font" required="" placeholder="повторите пароль" type="password">
+        </form>
+        <button class="font" style="margin-top: 30px;
+      width: 201px;
+      height: 60px;">Зарегистрироваться</button>
+
+        <div class="bottom"></div>
+      </div>
+    </div>
+
+</td>
+<td class="tablras">
+    <div class="ras">
+      <div class="mailing grad" id="mailing">
+        <div class="fon">
+          <div class="top"></div>
+          <div class="left"></div>
+          <div class="rigth"></div>
+          <p class="font fff" >Рассылка</p>
+          <a class="rastv" href="https://tglink.ru/meetup_finder_bot">Телеграм</a>
+          <a class="rastv" href="https://vk.com/it__event">ВК</a>
+          
+          <div class="bottom"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="cal.js"></script>
+</td>
+  <td class="tablras">
+  <img class="vv" src="i/Рассылка.png"></td>
+</tr>
+</table>
+</a>
+  <!--женя (конец)-->
+	<div id="progressbar"></div>
+	<div id="scrollPath"></div>
+
+<footer>
+	<p class="x"> Контакты: 8-908-512-89-00 </p>
+</footer>
+<script type="text/javascript">
+	let progress = document.getElementById('progressbar');
+	let totalHeight = document.body.scrollHeight - window.innerHeight;
+	window.onscroll = function(){
+		let progressHeight = (window.pageYOffset / totalHeight) * 100;
+		progress.style.height = progressHeight + "%";
+	}
+    </script>
+    <script src="cal.js"></script>
+</body>
+</html>
